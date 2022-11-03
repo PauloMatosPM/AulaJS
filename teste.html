@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <!-- <script src="teste.js"></script> --> 
+    <!-- <script src="exc_jva1.js"></script> -->
+    <!--<script src="metodos_numericos.js"></script>-->
+    <!--  <script src="metodos_arrays.js"></script> -->
+   <!-- <script src="matematica.js"></script >-->
+        <!--<script src="funcoes.js"></script >-->
+
+</head>
+
+<body>
+    <p id="demo"></p>
+    <div id="div"></div>
+    <h1>adshdf</h1>
+    <h1></h1>
+    <span class="muda"></span>
+    <br>
+    <a id= "link" href="">clique em mim</a>
+    <p onclick="this.innerHTML = 'Fala'">Clica</p>
+
+    <button onclick="mostraHora()">Que horas são?</button>
+    <br>
+    Nome: <input type="text" id="nome" name="nome" onchange="maiusculas()">
+    <hr>
+
+    
+    <!-- função para passar o mouse em cima
+    <div style="background-color:red ; width: 120px; 
+    height: 20px; padding: 40px;" onmouseover="mouseEmCima(this)"
+    onmouseout="mouseFora(this)" >
+        Passe o mouse
+    </div>-->
+    <hr>
+
+    <div style="background-color:red ; width: 120px; 
+    height: 20px; padding: 40px;" onmousedown="clica(this)"
+    onmouseup="soltou(this)" onclick="aparece()" >
+        Passe o mouse
+    </div>
+    <span id="apareceu"></span>
+
+
+
+    <script>
+        function clica(objeto){
+            objeto.style.backgroundColor = "yellow"
+            objeto.innerHTML = "ME SOLTEI!!!!"
+        }
+
+        function soltou(objeto){
+            objeto.style.backgroundColor = "blue"
+            objeto.innerHTML = "OBRIGADO"
+        }
+
+        function aparece(){
+            document.getElementById("apareceu").innerHTML = "APARECI"
+        }
+
+
+
+
+
+
+        function mouseEmCima(objeto){
+            objeto.innerHTML = "Mouse esta em cima"
+            objeto.style.backgroundColor = "blue"
+        }
+
+        function mouseFora(objeto){
+            objeto.innerHTML = "PASSE O MOUSE AQUI"
+            objeto.style.backgroundColor = "red"
+        }
+
+
+
+
+
+
+
+
+
+
+
+        function mostraHora(){
+            document.getElementById("demo").innerHTML = Date()
+        }
+
+        function maiusculas(){
+            var nome = document.getElementById("nome")
+            nome.value = nome.value.toUpperCase()
+        }
+
+        document.getElementById("demo").innerHTML = "Ola pessoas"
+        document.getElementById("demo").style.color = "purple"
+        document.getElementById("link").setAttribute("href", "https://jovemnerd.com.br/")
+        document.getElementById("demo").onclick = function(){
+            document.getElementById("demo").innerHTML = "Banzai"
+        }
+
+
+        var paragrafo = document.createElement("p")
+        paragrafo.innerText = "paragrafo inserido"
+      //  document.body.appendChild(paragrafo)
+           document.getElementById("div").appendChild(paragrafo) 
+
+
+
+
+
+        document.getElementsByTagName("h1")[1].innerHTML= "ruby ruby ruby rubyyy"
+        document.getElementsByClassName("muda")[0].innerHTML= "span class"
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
